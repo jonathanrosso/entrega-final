@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100px;
+  background-color: black;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: rgb(35, 126, 103);
+}
+
+h2 {
+  color: white;
+  text-align: left;
+}
+h2 span {
+  color: green;
+  border-bottom: medium solid black;
+}
+
+.logo {
+  height: 100%;
+}
+
+.menu a {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+  text-decoration: none;
+  color: rgb(0, 255, 191);
+  font-size: 1, 2rem;
+}
+
+.menu a::before {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  transition: 0.4s ease-out;
+}
+
+.menu a:hover::before {
+  width: 100%;
+}
+
+.mostrarMenu,
+.esconderMenu {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  transition: 0.5s;
+  color: rgb(255, 255, 255);
+}
+
+.mostrarMenu {
+  order: 1;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .mostrarMenu,
+.esconderMenu {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 100px 0px;
+    z-index: 100;
+    transition: 0.5s;
+    background: black;
+  }
+
+  .menu a {
+    display: block;
+    padding: 20px;
+  }
+
+  .esconderMenu {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+
+  #check:checked ~ .menu {
+    right: 0;
+  }
+}
+#banner {
+  padding: 50vh;
+  height: 45vh;
+  background-image: url(../imagenes/tuterreno.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#banner::before {
+  position: absolute;
+  width: 100%;
+  height: 45vh;
+  left: 0;
+}
+
+.contenidoBaner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenidoBaner h2 {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+.boton {
+  text-decoration: none;
+  color: red;
+  border: 4px solid red;
+  padding: 10px 20px;
+  align-self: baseline;
+}
+
+.boton:hover {
+  background: white;
+  transition: 4.5s;
+}
+
+.efectoEscribir {
+  margin: auto;
+  background: black;
+}
+
+.maquinaEscribir {
+  align-content: center;
+  float: left;
+  color: rgb(0, 255, 191);
+  position: relative;
+}
+
+h1 span {
+  position: absolute;
+  right: 0;
+  width: 0;
+  background-color: black;
+  border-left: 1px solid white;
+  -webkit-animation: escribir 5s infinite steps(14);
+          animation: escribir 5s infinite steps(14);
+}
+
+@-webkit-keyframes escribir {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes escribir {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+body {
+  background: black;
+  justify-content: center;
+}
+
+footer address {
+  color: rgb(0, 255, 191);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+p {
+  color: white;
+}/*# sourceMappingURL=estilos.css.map */
